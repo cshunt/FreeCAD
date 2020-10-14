@@ -22,7 +22,7 @@ env:
     - GENERATOR="Unix Makefiles"
     - CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE:-Release}
     - FREECAD_RELEASE="0.19_pre"
-    - DEPLOY_RELEASE=${DEPLOY_RELEASE:-$FREECAD_RELEASE}
+#    - DEPLOY_RELEASE=${DEPLOY_RELEASE:-$FREECAD_RELEASE}
 #    - OSX_PORTS_CACHE=${OSX_PORTS_CACHE:-FreeCAD/FreeCAD-ports-cache}
     - DEPLOY=${DEPLOY:=1}
 
@@ -239,9 +239,9 @@ before_install:
        ;;
 
    "windows")
-       #choco install -y python
-       #py -m pip install --quiet --upgrade pip
-       #py -m pip install git+https://github.com/frerich/clcache.git@v4.2.0
+       choco install -y python
+       py -m pip install --quiet --upgrade pip
+       py -m pip install git+https://github.com/frerich/clcache.git@v4.2.0
        curl -L https://github.com/frerich/clcache/releases/download/v4.2.0/clcache-4.2.0.zip --output clcache-4.2.0.zip
        7z x clcache-4.2.0.zip > /dev/null
        export PATH=$CLCACHE_PATH:$PATH
