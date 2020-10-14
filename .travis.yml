@@ -24,7 +24,7 @@ env:
     - FREECAD_RELEASE="0.19_pre"
 #    - DEPLOY_RELEASE=${DEPLOY_RELEASE:-$FREECAD_RELEASE}
 #    - OSX_PORTS_CACHE=${OSX_PORTS_CACHE:-FreeCAD/FreeCAD-ports-cache}
-    - DEPLOY=${DEPLOY:=1}
+    - DEPLOY=${1}
 
 # jobs:
     # chunk.io key (if needed, obtain it with Yorik, PrzemoF, Kunda1)
